@@ -16,8 +16,14 @@ $search-btn-width: 52px;
     align-items: center;
 }
 
-.logo {
+.search-title {
+    color: var(--text-title);
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    height: 30px;
+    line-height: 20px;
 }
+
 .search {
     width: 361px;
     height: 46px;
@@ -31,6 +37,9 @@ $search-btn-width: 52px;
     position: relative;
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
+    }
+    &-result {
+        width: 361px;
     }
 }
 
