@@ -1,14 +1,17 @@
 import { BsXCircleFill } from '@react-icons/all-files/bs/BsXCircleFill';
 import { BsSearch } from '@react-icons/all-files/bs/BsSearch';
+import { AiOutlinePlus } from '@react-icons/all-files/ai/AiOutlinePlus';
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters';
 import Tippy from '@tippyjs/react/headless';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
+
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -53,6 +56,12 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
+                <div className={cx('actions')}>
+                    <Button outline grey>
+                        <AiOutlinePlus className={cx('plus-icon')} /> Upload
+                    </Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );
