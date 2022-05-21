@@ -25,11 +25,27 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <IoEarthOutline />,
-        title: 'English'
+        title: 'English',
+        children: {
+            title: 'Language',
+            data:[
+                {
+                    code: 'vie',
+                    language: 'Tiếng Việt',
+                    type:'languague'
+                },
+                {
+                    code:'eng',
+                    language: 'English',
+                    type:'languague'
+                }
+            ]
+        }
     },
     {
         icon: <AiOutlineQuestionCircle />,
-        title: 'Feedback and help'
+        title: 'Feedback and help',
+        path: '/feedback'
     },
     {
         icon: <RiKeyboardBoxLine />,
@@ -44,6 +60,10 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    const handleMenuChange =(menuItem)=>{
+        console.log(menuItem)
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -84,7 +104,7 @@ function Header() {
                         Upload
                     </Button>
                     <Button primary>Log in</Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                     <button className={cx('more-btn')}>
                         <BsThreeDotsVertical />
                     </button>

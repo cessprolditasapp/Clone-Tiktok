@@ -14,7 +14,11 @@ $search-btn-width: 52px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 24px 0 20px;
+}
+
+.logo {
+    transform: translateY(5%);
 }
 
 .search-title {
@@ -105,3 +109,4 @@ $search-btn-width: 52px;
     padding: 8px;
     background-color: transparent;
 }
+

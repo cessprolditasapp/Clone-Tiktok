@@ -1,7 +1,7 @@
 $border-grey: rgba(22, 24, 35, 0.12);
 
 .wrapper {
-    min-width: 90px;
+    min-width: 100px;
     min-height: 36px;
     font-size: 1.6rem;
     line-height: 22px;
@@ -100,4 +100,5 @@ $border-grey: rgba(22, 24, 35, 0.12);
 
 .text {
     color: var(--text-color);
+    min-width: 90px;
 }
