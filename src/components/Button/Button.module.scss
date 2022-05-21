@@ -1,7 +1,7 @@
 $border-grey: rgba(22, 24, 35, 0.12);
 
 .wrapper {
-    min-width: 100px;
+    min-width: 90px;
     min-height: 36px;
     font-size: 1.6rem;
     line-height: 22px;
@@ -87,4 +87,17 @@ $border-grey: rgba(22, 24, 35, 0.12);
         border-color: rgba(22, 24, 35, 0.2);
         background-color: rgba(22, 24, 35, 0.03);
     }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    transform: translateY(5%);
+    margin-right: 8px;
+    text-align: center;
+}
+
+.text {
+    color: var(--text-color);
 }

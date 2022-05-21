@@ -2,6 +2,12 @@ import { BsXCircleFill } from '@react-icons/all-files/bs/BsXCircleFill';
 import { BsSearch } from '@react-icons/all-files/bs/BsSearch';
 import { AiOutlinePlus } from '@react-icons/all-files/ai/AiOutlinePlus';
 import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters';
+import { BsThreeDotsVertical } from '@react-icons/all-files/bs/BsThreeDotsVertical';
+import { IoEarthOutline } from '@react-icons/all-files/io5/IoEarthOutline';
+import { AiOutlineQuestionCircle } from '@react-icons/all-files/ai/AiOutlineQuestionCircle';
+import { RiKeyboardBoxLine } from '@react-icons/all-files/ri/RiKeyboardBoxLine';
+
+
 import Tippy from '@tippyjs/react/headless';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
@@ -12,8 +18,25 @@ import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu'
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <IoEarthOutline />,
+        title: 'English'
+    },
+    {
+        icon: <AiOutlineQuestionCircle />,
+        title: 'Feedback and help'
+    },
+    {
+        icon: <RiKeyboardBoxLine />,
+        title: 'Keyboard shortcuts'
+    },
+]
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
@@ -57,10 +80,15 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button outline grey>
-                        <AiOutlinePlus className={cx('plus-icon')} /> Upload
+                    <Button outline grey lefticon={<AiOutlinePlus />}>
+                        Upload
                     </Button>
                     <Button primary>Log in</Button>
+                    <Menu items={MENU_ITEMS}>
+                    <button className={cx('more-btn')}>
+                        <BsThreeDotsVertical />
+                    </button>
+                    </Menu>
                 </div>
             </div>
         </header>

@@ -9,7 +9,7 @@
 
     --black: #000;
     --white: #fff;
-    --text-color: #333;
+    --text-color: rgba(22, 24, 35, 1);
     --text-title: rgba(22, 24, 35, 0.5);
     --icon-search-color: rgba(22, 24, 35, 0.34);
 
@@ -28,6 +28,7 @@ body {
     font-family: 'Nunito', sans-serif;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    font-size: 1.4rem;
 }
 
 button,
