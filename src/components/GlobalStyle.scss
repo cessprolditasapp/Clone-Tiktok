@@ -29,16 +29,16 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     font-size: 1.4rem;
-    .tippy-box{
+    .tippy-box {
         border-radius: 8px;
         font-size: 1.6rem;
-        line-height:22px;
+        line-height: 22px;
         background-color: rgba(84, 84, 84, 0.92);
         font-weight: 600;
         padding: 8px;
     }
-    
-    .tippy-arrow{
+
+    .tippy-arrow {
         height: 0px;
         color: rgba(84, 84, 84, 0.92);
         left: 60%;
@@ -56,4 +56,3 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
-

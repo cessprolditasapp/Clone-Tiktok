@@ -1,7 +1,4 @@
-import { BsXCircleFill } from '@react-icons/all-files/bs/BsXCircleFill';
-import { BsSearch } from '@react-icons/all-files/bs/BsSearch';
 import { AiOutlinePlus } from '@react-icons/all-files/ai/AiOutlinePlus';
-import { AiOutlineLoading3Quarters } from '@react-icons/all-files/ai/AiOutlineLoading3Quarters';
 import { BsThreeDotsVertical } from '@react-icons/all-files/bs/BsThreeDotsVertical';
 import { IoEarthOutline } from '@react-icons/all-files/io5/IoEarthOutline';
 import { AiOutlineQuestionCircle } from '@react-icons/all-files/ai/AiOutlineQuestionCircle';
@@ -13,25 +10,18 @@ import { BsGearWide } from '@react-icons/all-files/bs/BsGearWide';
 import { ImCoinDollar } from '@react-icons/all-files/im/ImCoinDollar';
 import { FiLogIn } from '@react-icons/all-files/fi/FiLogIn';
 
-
-
-
-
-
-import TippyHeadless from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import Tippy2 from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
 
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -67,13 +57,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
-
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
@@ -104,7 +87,7 @@ function Header() {
             icon: <FiLogIn />,
             title: 'Log out',
             path: '/logout',
-            separate:true,
+            separate: true,
         },
     ];
 
@@ -114,34 +97,7 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
                 </div>
-                <TippyHeadless
-                    visible={searchResult.length > 0}
-                    interactive
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Account</h4>
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input
-                            className={cx('search-input')}
-                            placeholder="Search account and video"
-                            spellCheck={false}
-                        />
-                        <button className={cx('clear')}>
-                            <BsXCircleFill />
-                        </button>
-                        <AiOutlineLoading3Quarters className={cx('loading')} />
-                        <span className={cx('separate-line')}></span>
-                        <button className={cx('search-btn')}>
-                            <BsSearch />
-                        </button>
-                    </div>
-                </TippyHeadless>
+                <Search />
                 <div className={cx('actions')}>
                     <Button outline grey lefticon={<AiOutlinePlus />}>
                         Upload
@@ -166,10 +122,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt=""
                                 src="https://www.themarysue.com/wp-content/uploads/2022/02/yamato-one-piece-1-1200x675.png"
+                                fallBack="https://play-lh.googleusercontent.com/2kdv4gGWKchMkThhxMYlWlkSouhx6BP50X1b7O7_Yl78fFCitAe3t4hLACuCyC9tsJA"
                             />
                         ) : (
                             <>
