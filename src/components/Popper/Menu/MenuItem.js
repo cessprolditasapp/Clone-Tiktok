@@ -1,20 +1,17 @@
-import classNames  from 'classnames/bind'
+import classNames from 'classnames/bind';
 
-import styles from './Menu.module.scss'
+import styles from './Menu.module.scss';
 
-import Button from '~/components/Button'
+import Button from '~/components/Button';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
-function MenuItem({data,onClick}) {
-    const classes = cx('menu-item',
-    {separate:data.separate}
-    )
-    return ( 
+function MenuItem({ data, onClick }) {
+    const classes = cx('menu-item', { separate: data.separate });
+    return (
         <Button onClick={onClick} to={data.path} className={classes} text lefticon={data.icon}>
             {data.title} {data.language}
         </Button>
-
     );
 }
 

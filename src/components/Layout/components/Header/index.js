@@ -14,6 +14,7 @@ import Tippy from '@tippyjs/react';
 import Tippy2 from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
+import {Link} from 'react-router-dom'
 
 import styles from './Header.module.scss';
 
@@ -22,6 +23,7 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routeConfig from '~/config/routes'
 
 const cx = classNames.bind(styles);
 
@@ -94,9 +96,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routeConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
-                </div>
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     <Button outline grey lefticon={<AiOutlinePlus />}>

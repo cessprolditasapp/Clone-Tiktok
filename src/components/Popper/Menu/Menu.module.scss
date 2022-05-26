@@ -1,26 +1,26 @@
-.menu-list{
+.menu-list {
     min-width: 223px;
-    .menu-item{
-        margin-left:0;
+    .menu-item {
+        margin-left: 0;
     }
 }
 
-.menu-popper{
+.menu-popper {
     padding-bottom: 8px;
 }
 
-.menu-item{
+.menu-item {
     width: 100%;
     justify-content: flex-start;
     padding: 10px 16px;
     border-radius: 0;
     line-height: 22px;
-    line-height:1.8rem;
-    &.separate{
+    line-height: 1.8rem;
+    &.separate {
         border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
-    &:hover{
-        background-color:rgba(22, 24, 35, 0.03); ;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
 
@@ -40,7 +40,7 @@
     margin-left: 28px;
     background-color: transparent;
     position: absolute;
-    left:0;
+    left: 0;
 }
 
 .header-title {

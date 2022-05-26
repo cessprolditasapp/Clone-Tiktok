@@ -21,7 +21,6 @@ $search-btn-width: 52px;
     transform: translateY(5%);
 }
 
-
 .actions {
     display: flex;
     align-items: center;
@@ -36,18 +35,18 @@ $search-btn-width: 52px;
     background-color: transparent;
 }
 
-.action-btn{
+.action-btn {
     width: 32px;
     height: 32px;
     background-color: transparent;
     margin-left: 16px;
-    display:block;
+    display: block;
     font-size: 2.7rem;
     transform: translateY(10%);
     cursor: pointer;
 }
 
-.user-avatar{
+.user-avatar {
     width: 32px;
     height: 32px;
     border-radius: 100%;
