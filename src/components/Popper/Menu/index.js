@@ -12,7 +12,7 @@ const defaultFn = () => {};
 function Menu({ children, items, hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
-    console.log(items)
+    const [headerTitle, setHeaderTitle] = useState('');
 
     const renderItems = () => {
         return current.data.map((item, index) => {
@@ -23,7 +23,7 @@ function Menu({ children, items, hideOnClick = false, onChange = defaultFn }) {
                     data={item}
                     onClick={() => {
                         if (isParent) {
-                            return setHistory((pre) => [...pre, item.children]);
+                            return setHistory((pre) => [...pre, item.children]) & setHeaderTitle(item.children.header);
                         } else {
                             onChange(item);
                         }
@@ -45,7 +45,7 @@ function Menu({ children, items, hideOnClick = false, onChange = defaultFn }) {
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <Header
-                                title="Language"
+                                title={headerTitle}
                                 onBack={() => {
                                     setHistory((pre) => pre.slice(0, pre.length - 1));
                                 }}

@@ -14,7 +14,7 @@ import Tippy from '@tippyjs/react';
 import Tippy2 from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
@@ -23,7 +23,7 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
-import config from '~/config'
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -32,7 +32,7 @@ const MENU_ITEMS = [
         icon: <IoEarthOutline />,
         title: 'English',
         children: {
-            title: 'Language',
+            header: 'Language',
             data: [
                 {
                     code: 'vie',

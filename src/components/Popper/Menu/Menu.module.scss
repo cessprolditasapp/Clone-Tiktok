@@ -9,7 +9,7 @@
     padding-bottom: 8px;
 }
 
-.menu-body{
+.menu-body {
     overflow-y: auto;
 }
 
@@ -20,6 +20,7 @@
     border-radius: 0;
     line-height: 22px;
     line-height: 1.8rem;
+    font-family: 'Nunito', sans-serif;
     &.separate {
         border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
