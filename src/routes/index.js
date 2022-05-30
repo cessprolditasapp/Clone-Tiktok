@@ -3,16 +3,17 @@ import Following from '~/pages/following';
 import Upload from '~/pages/upload';
 import Profile from '~/pages/profile';
 import Search from '~/pages/search';
-import routeConfig from '~/config/routes';
 
-import { HeaderOnly } from '~/components/Layout';
+import config from '~/config'
+
+import { HeaderOnly } from '~/layouts';
 
 const publicRoutes = [
-    { path: routeConfig.home, component: Home },
-    { path: routeConfig.following, component: Following },
-    { path: routeConfig.upload, component: Upload, layout: HeaderOnly },
-    { path: routeConfig.profile, component: Profile },
-    { path: routeConfig.search, component: Search, layout: null },
+    { path: config.routes.home, component: Home },
+    { path: config.routes.following, component: Following },
+    { path: config.routes.upload, component: Upload, layout: HeaderOnly },
+    { path: config.routes.profile, component: Profile },
+    { path: config.routes.search, component: Search, layout: null },
 ];
 
 const privateRoutes = [];
