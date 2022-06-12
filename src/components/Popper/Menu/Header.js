@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 import { BsChevronLeft } from '@react-icons/all-files/bs/BsChevronLeft';
+import PropTypes from 'prop-types'
+
 
 import styles from './Menu.module.scss';
 
@@ -14,5 +16,8 @@ function Header({ title, onBack }) {
         </header>
     );
 }
-
+Header.propTypes={
+    title:PropTypes.string,
+    onBack:PropTypes.func
+}
 export default Header;

@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { AiFillCheckCircle } from '@react-icons/all-files/ai/AiFillCheckCircle';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 import styles from './AccountItem.module.scss';
 import Image from '../Image';
@@ -20,5 +21,8 @@ function AccountItem({ data, onClick }) {
         </Link>
     );
 }
-
+AccountItem.propTypes={
+    data:PropTypes.object,
+    onClick:PropTypes.func,
+}
 export default AccountItem;

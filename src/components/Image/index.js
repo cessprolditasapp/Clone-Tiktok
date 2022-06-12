@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Image.module.scss';
 import images from '~/assets/images';
 
+
 const cx = classNames.bind(styles);
 
 function Image({ src, alt, className, fallBack: newFallBack = images.avatar, ...props }, ref) {
@@ -23,5 +24,4 @@ function Image({ src, alt, className, fallBack: newFallBack = images.avatar, ...
         />
     );
 }
-
 export default forwardRef(Image);
